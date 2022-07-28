@@ -1,10 +1,12 @@
 import * as React from "react";
 import Head from "next/head";
 import { ThemeProvider } from "@mui/material/styles";
+import { GlobalStyles } from "@mui/material";
 import CssBaseLine from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -18,6 +20,11 @@ function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseLine />
+        <GlobalStyles
+          styles={{
+            body: { backgroundColor: "#17181f" },
+          }}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>
