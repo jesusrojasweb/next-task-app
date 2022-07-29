@@ -4,7 +4,9 @@ import LoginButton from "../auth/LoginButton";
 import LogoutButton from "../auth/LogoutButton";
 import Link from "next/link";
 
-function Header() {
+function Header({ haveToken = false }) {
+  console.log(haveToken);
+
   return (
     <header
       style={{
@@ -20,25 +22,9 @@ function Header() {
           alignItems="center"
         >
           <div>
-            <Link href="/">
-              <h1 style={{ color: "white", cursor: "pointer" }}>Inicio</h1>
-            </Link>
+            <h1 style={{ color: "white" }}>Task App</h1>
           </div>
-          <div>
-            <LoginButton />
-            <LogoutButton />
-            <Link href="/tasks">
-              <Button variant="contained">
-                <a>Tasks</a>
-              </Button>
-            </Link>
-            {/* <Button variant="contained" sx={{ marginRight: "1em" }}>
-              Login
-            </Button>
-            <Button color="secondary" variant="contained">
-              Sign up
-            </Button> */}
-          </div>
+          <div>{haveToken ? <LogoutButton /> : <LoginButton />}</div>
         </Grid>
       </Container>
     </header>

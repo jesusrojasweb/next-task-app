@@ -15,13 +15,17 @@ import { createTaskService } from "../services/taskServices";
 
 library.add(fasFaPlus);
 
-function TaskInput() {
+function TaskInput({ tasks, setTasks }) {
   const [text, setText] = useState("");
 
   const createTask = () => {
     if (text.trim() !== "") {
       console.log("add task");
-      createTaskService(text).then((res) => console.log(res));
+      createTaskService(text).then((res) => {
+        console.log(res);
+        setText("");
+        setTasks([...tasks, res.data.task]);
+      });
     }
   };
 
@@ -33,7 +37,7 @@ function TaskInput() {
       color="text"
       sx={{ color: "white !important" }}
       onChange={(e) => setText(e.target.value)}
-      valule={text}
+      value={text}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start" color="secondary">

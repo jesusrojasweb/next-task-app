@@ -11,7 +11,6 @@ export default function Home() {
         <title>Task App</title>
         <meta name="description" content="Task App Text" />
       </Head>
-      <Header />
       <Container maxwith="sm">
         <main>
           <h1>This is the task app</h1>

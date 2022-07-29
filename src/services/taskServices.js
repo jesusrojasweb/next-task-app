@@ -23,18 +23,6 @@ export const createTaskService = (task) => {
   if (!token) {
     return;
   }
-
-  // const data = JSON.stringify({ task });
-
-  // console.log(data);
-
-  // return fetch(url, {
-  //   method: "POST",
-  //   headers: {
-  //     Authorization: `Bearer ${token}`,
-  //   },
-  //   body: data,
-  // });
   return axios({
     url,
     method: "post",
@@ -42,5 +30,38 @@ export const createTaskService = (task) => {
       Authorization: `Bearer ${token}`,
     },
     data: { task },
+  });
+};
+
+export const handleDoneService = (_id, isDone) => {
+  const token = localStorage.getItem("token");
+  let url = "http://localhost:3001/tasks/" + _id;
+  if (!token) {
+    return;
+  }
+
+  console.log(isDone);
+  return axios({
+    url,
+    method: "put",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    data: { done: !isDone },
+  });
+};
+
+export const deleteTaskService = (_id) => {
+  const token = localStorage.getItem("token");
+  let url = "http://localhost:3001/tasks/" + _id;
+  if (!token) {
+    return;
+  }
+  return axios({
+    url,
+    method: "delete",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   });
 };
