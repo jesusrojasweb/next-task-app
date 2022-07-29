@@ -7,6 +7,12 @@ import { CacheProvider } from "@emotion/react";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { config, library } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { fas, far, fab } from "@fortawesome/free-solid-svg-icons";
+
+library.add(fas);
+config.autoAddCss = false;
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -23,6 +29,8 @@ function MyApp(props) {
         <GlobalStyles
           styles={{
             body: { backgroundColor: "#17181f" },
+            h1: { color: "#fff" },
+            input: { color: "#fff !important" },
           }}
         />
         <Component {...pageProps} />

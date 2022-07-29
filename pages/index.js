@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { css } from "@emotion/react";
 import Header from "../src/components/Header";
-import Tasks from "../src/components/Tasks";
 
 export default function Home() {
   return (

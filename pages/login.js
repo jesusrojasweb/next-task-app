@@ -11,12 +11,15 @@ export default function Login() {
   const { code = undefined } = router.query;
 
   useEffect(() => {
-    loginVerificationService(code)
-      .then((res) => res.json())
-      .then((res) => {
-        localStorage.setItem("token", res.token);
-        router.push("/tasks");
-      });
+    const token = localStorage.getItem("token");
+    if (code || token) {
+      loginVerificationService(code)
+        .then((res) => res.json())
+        .then((res) => {
+          localStorage.setItem("token", res.token);
+          router.push("/tasks");
+        });
+    }
   }, [code]);
 
   return (

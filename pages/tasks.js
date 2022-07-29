@@ -1,7 +1,8 @@
 import { Button, Container, Grid } from "@mui/material";
 import Head from "next/head";
 import Header from "../src/components/Header";
-import TasksComponent from "../src/components/Tasks";
+import TaskInput from "../src/components/TaskInput";
+import TasksContainer from "../src/components/TasksContainer";
 
 export default function Tasks() {
   return (
@@ -11,10 +12,11 @@ export default function Tasks() {
         <meta name="description" content="Task App Text" />
       </Head>
       <Header />
-      <Container maxWith="sm">
+      <Container sx={{ maxWidth: "900px !important" }}>
         <main>
           <h1>Tasks</h1>
-          <TasksComponent />
+          <TaskInput />
+          <TasksContainer />
         </main>
       </Container>
     </div>

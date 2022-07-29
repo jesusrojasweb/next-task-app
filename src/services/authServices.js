@@ -1,5 +1,4 @@
-import React from "react";
-import { useRouter } from "next/router";
+import axios from "axios";
 
 const domain = "dev-h70joa6x.us.auth0.com";
 const audience = "https://taskappjesusrojasweb.com/api";
@@ -31,6 +30,8 @@ export const logOutService = () => {
 
   const response = `https://${domain}/logout?client_id=${clientId}&returnTo=${returnTo}`;
 
+  localStorage.removeItem("token");
+
   redirect(response);
 };
 
@@ -48,7 +49,6 @@ export const loginVerificationService = (code) => {
   } else {
     return;
   }
-
   return fetch(url, {
     method: "GET",
     headers,
