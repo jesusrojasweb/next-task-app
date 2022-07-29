@@ -5,10 +5,14 @@ import TaskItem from "./TaskItem";
 function TasksContainer({ tasks, deleteTask }) {
   return (
     <>
-      <h2>ToDo</h2>
-      {tasks.map((task) => (
-        <TaskItem key={task._id} {...task} deleteTask={deleteTask} />
-      ))}
+      {tasks[0] === undefined ? (
+        <h2 style={{ textAlign: "center" }}>Create your first Task</h2>
+      ) : (
+        tasks.map((task) => (
+          <TaskItem key={task._id} {...task} deleteTask={deleteTask} />
+        ))
+      )}
+      {}
     </>
   );
 }

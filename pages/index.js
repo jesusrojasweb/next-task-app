@@ -1,10 +1,8 @@
-import { Button, Container, Grid } from "@mui/material";
+import { Container } from "@mui/material";
 import Head from "next/head";
-import Image from "next/image";
-import { css } from "@emotion/react";
-import Header from "../src/components/Header";
+import HomeMessage from "../src/components/HomeMessage";
 
-export default function Home() {
+export default function Home({ haveToken }) {
   return (
     <div>
       <Head>
@@ -12,8 +10,17 @@ export default function Home() {
         <meta name="description" content="Task App Text" />
       </Head>
       <Container maxwith="sm">
-        <main>
+        <main
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            height: "80vh",
+          }}
+        >
           <h1>This is the task app</h1>
+          <HomeMessage haveToken={haveToken} />
         </main>
       </Container>
     </div>

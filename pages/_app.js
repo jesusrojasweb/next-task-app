@@ -45,6 +45,7 @@ function MyApp(props) {
             h1: COLOR_WHITE,
             h2: COLOR_WHITE,
             h3: COLOR_WHITE,
+            p: COLOR_WHITE,
             span: COLOR_WHITE,
             input: { color: "#fff !important" },
           }}

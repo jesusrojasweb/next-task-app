@@ -35,7 +35,7 @@ function TaskInput({ tasks, setTasks }) {
       label="Add Task"
       fullWidth={true}
       color="text"
-      sx={{ color: "white !important" }}
+      sx={{ color: "white !important", marginBottom: "4em" }}
       onChange={(e) => setText(e.target.value)}
       value={text}
       InputProps={{
