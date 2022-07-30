@@ -19,7 +19,7 @@ export default function Home({ haveToken }) {
             height: "80vh",
           }}
         >
-          <h1>This is the task app</h1>
+          <h1 data-cy="home-title">This is the task app</h1>
           <HomeMessage haveToken={haveToken} />
         </main>
       </Container>

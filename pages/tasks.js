@@ -40,7 +40,7 @@ export default function Tasks({ haveToken }) {
       </Head>
       <Container sx={{ maxWidth: "900px !important" }}>
         <main>
-          <h1>Tasks</h1>
+          <h1 data-cy="task-title">Tasks</h1>
           <TaskInput setTasks={setTasks} tasks={tasks} />
           <TasksContainer tasks={tasks} deleteTask={deleteTask} />
         </main>

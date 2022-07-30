@@ -8,7 +8,7 @@ import { loginVerificationService } from "../src/services/authServices";
 export default function Login() {
   const router = useRouter();
 
-  const [message, setMessage] = usState("");
+  const [message, setMessage] = useState("");
 
   const { code = undefined } = router.query;
 
@@ -35,7 +35,7 @@ export default function Login() {
       </Head>
       <Container maxwith="sm">
         <main>
-          <h1>{message}</h1>
+          <h1 data-cy="login-message">{message}</h1>
         </main>
       </Container>
     </div>

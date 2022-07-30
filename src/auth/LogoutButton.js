@@ -6,7 +6,12 @@ function LogoutButton() {
   const logOut = logOutService;
 
   return (
-    <Button variant="contained" color="secondary" onClick={logOut}>
+    <Button
+      data-cy="logout-button"
+      variant="contained"
+      color="secondary"
+      onClick={logOut}
+    >
       LogOut
     </Button>
   );

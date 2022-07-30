@@ -6,7 +6,12 @@ function LoginButton() {
   const login = loginService;
 
   return (
-    <Button variant="contained" sx={{ marginRight: "1em" }} onClick={login}>
+    <Button
+      data-cy="login-button"
+      variant="contained"
+      sx={{ marginRight: "1em" }}
+      onClick={login}
+    >
       Login
     </Button>
   );
